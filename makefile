@@ -1,7 +1,7 @@
 all: ./dist/new config.json
 ./dist/new:
 	pyinstaller -F new.py
-config.json
+config.json:
 	echo '{\n\t"emptyFile":"emptyFile"\n}' > config.json
 install: config.json ./dist/new ~/Templates/
 	cp ./dist/new ~/bin/new
