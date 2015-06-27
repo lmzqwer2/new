@@ -1,14 +1,15 @@
-all:
+all: ./dist/new config.json
+./dist/new:
 	pyinstaller -F new.py
+config.json
 	echo '{\n\t"emptyFile":"emptyFile"\n}' > config.json
-install: config.json ./dist/new ~/.lnewtemplate/
+install: config.json ./dist/new ~/Templates/
 	cp ./dist/new ~/bin/new
-	cp config.json ~/.lnewtemplate/config.json
-~/.lnewtemplate/:
-	mkdir ~/.lnewtemplate
+	cp config.json ~/Templates/.config.json
+~/Templates/:
+	mkdir ~/Templates
 uninstall:
 	rm ~/bin/new
-	rm -rf ~/.lnewtemplate
 clean:
 	rm -rf new.spec config.json dist/ build/
 

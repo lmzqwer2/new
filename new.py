@@ -20,7 +20,7 @@ def newFile(newFileName):
     newFileExtName = path.splitext(newFileName)[1]
     
     userFolder = path.expanduser('~')
-    configFolder = path.join(userFolder,'Template/')
+    configFolder = path.join(userFolder,'Templates/')
     configFileName = '.config.json'
     configFilePath = path.join(configFolder,configFileName)
 #    print configFilePath
